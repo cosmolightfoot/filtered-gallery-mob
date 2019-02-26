@@ -8,8 +8,15 @@
     <link rel="stylesheet" type="text/css" href="src/main.css">
 </head>
 <body>
-    <ul id="image-list">
-    </ul> 
-    <script type ="module" src="./src/index.js"></script>
+    <main>
+        <form id="filter-list">
+            <label>Keyword: <input name="keyword"></label>
+            <label>Horns: <input type="number" name="horns"></label>
+            <button id ="filterbutton"> Filter</button>
+        </form>
+        <ul id="image-list">
+        </ul> 
+    </main>
+<script type ="module" src="./src/index.js"></script>
 </body>
 </html>
