@@ -1,11 +1,15 @@
 const test = QUnit.test;
 
 QUnit.module('image filter test');
-function filterImages(images, filter) {
+function filteredImage(images, filter) {
     //filter method
+    const filterArray = images.filter(image => image.keyword === filter.keyword
+    );
+    return filterArray;
     //return objects in an array
+
 }
-test('image filter test', function (assert) {
+test('image filter test', function(assert) {
     //arrange
     const images = [
         {
@@ -33,7 +37,7 @@ test('image filter test', function (assert) {
     // test function
     
     //act
-    const filteredImage = filteredImage(images, filter);
+    const result = filteredImage(images, filter);
     const expected = [
         {
             'keyword': 'chameleon',
@@ -47,5 +51,5 @@ test('image filter test', function (assert) {
 
     //assert
 
-    assert.deepEqual(filteredImage, expected);
+    assert.deepEqual(result, expected);
 });
