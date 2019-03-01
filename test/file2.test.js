@@ -20,8 +20,6 @@ const images = [
 
 test('image filter test', function(assert) {
     //arrange
-
-
     const filter = {
         keyword: 'chameleon',
         horns: ''

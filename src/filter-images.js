@@ -1,12 +1,10 @@
-export default function filteredImage(images, filter) {
+export default function filteredImage(images, userFilterSettings) {
     //filter method
-    const filteredImages = images.filter(image => {
-        const filterKeyword = !filter.keyword || image.keyword === filter.keyword;
-        const filterHorns = !filter.horns || image.horns >= filter.horns;
+    return images.filter(imageObject => {
+        const filterKeyword = !userFilterSettings.keyword || imageObject.keyword === userFilterSettings.keyword;
+        const filterHorns = !userFilterSettings.horns || imageObject.horns >= userFilterSettings.horns;
         return filterKeyword && filterHorns;
     });
-    return filteredImages;
 
     //return objects in an array
-
 }
