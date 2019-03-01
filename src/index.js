@@ -1,20 +1,10 @@
 import images from '../data/images.js';
 import filteredImage from './filter-images.js'; 
-const formNode = document.getElementById('filter-list');
+import loadFilter from './filter-components.js';
+import buildGallery from './gallery-components.js';
 
-formNode.addEventListener('submit', event => {
-    event.preventDefault();
 
-    console.log(imageListNode.children);
-
-    const formData = new FormData(formNode);
-    const filter = {
-        keyword: formData.get('keyword'),
-        horns: formData.get('horns')
-    };
-    
-    const filteredResult = filteredImage(images, filter);
-    
+loadFilter(function(filterSettings){
+    const filteredImageArray = filteredImage(images, filterSettings);
+    buildGallery(filteredImageArray);
 });
-
-
